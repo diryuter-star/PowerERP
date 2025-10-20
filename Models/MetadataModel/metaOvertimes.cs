@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+
+namespace powererp.Models
+{
+    [ModelMetadataType(typeof(z_metaOvertimes))]
+    public partial class Overtimes
+    {
+    }
+}
+public class z_metaOvertimes
+{
+    [Key]
+    public int Id { get; set; }
+    [Display(Name = "唯一鍵值")]
+    public string? BaseNo { get; set; }
+    [Display(Name = "加班單號")]
+    public string? SheetNo { get; set; }
+    [Display(Name = "加班日期")]
+    [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+    [Required(ErrorMessage = "{0}必須輸入!!")]
+    public DateTime? SheetDate { get; set; }
+    [Display(Name = "員工編號")]
+    [Required(ErrorMessage = "{0}必須輸入!!")]
+    public string? EmpNo { get; set; }
+    [Display(Name = "部門編號")]
+    public string? DeptNo { get; set; }
+    [Display(Name = "部門名稱")]
+    public string? DeptName { get; set; }
+    [Display(Name = "加班事由")]
+    [Required(ErrorMessage = "{0}必須輸入!!")]
+    public string? ResonText { get; set; }
+    [Display(Name = "類別代號")]
+    public string? TypeNo { get; set; }
+    [Display(Name = "開始時間")]
+    [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm}", ApplyFormatInEditMode = true)]
+    [Required(ErrorMessage = "{0}必須輸入!!")]
+    public DateTime? StartTime { get; set; }
+    [Display(Name = "結束時間")]
+    [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm}", ApplyFormatInEditMode = true)]
+    [Required(ErrorMessage = "{0}必須輸入!!")]
+    public DateTime? EndTime { get; set; }
+    [Display(Name = "加班時數")]
+    [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)]
+    public int Hours { get; set; }
+    [Display(Name = "備註")]
+    public string? Remark { get; set; }
+
+}

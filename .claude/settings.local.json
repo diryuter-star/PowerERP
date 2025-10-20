@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(dir \"wwwroot\\lib\\ckeditor5\")",
+      "Bash(if not exist \"wwwroot\\images\\news\" mkdir \"wwwroot\\images\\news\")",
+      "Bash(cmd /c:*)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
