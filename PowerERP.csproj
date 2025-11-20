@@ -7,7 +7,7 @@
     <StaticWebAssetsEnabled>false</StaticWebAssetsEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <NoWarn>CA1050,CA1822,CS1591,CS0168,CS8600,CS8601,CS8602,CS8603,CS8604,CS8618,IDE0017,IDE0018,IDE0028,IDE0044,IDE0051,IDE0052,IDE0054,IDE0059,IDE0060,IDE0063,IDE0074,IDE0090,IDE1006,RCS1110,RCS1118</NoWarn>
+    <NoWarn>CA1050,CA1822,CS1591,CS0168,CS8600,CS8601,CS8602,CS8603,CS8604,CS8618,IDE0017,IDE0018,IDE0028,IDE0044,IDE0051,IDE0052,IDE0054,IDE0059,IDE0060,IDE0063,IDE0074,IDE0090,IDE1006,RCS1110,RCS1118,NU1903</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -29,6 +29,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="9.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Build" Version="17.11.0-preview-24008-01" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">

@@ -81,6 +81,10 @@ public partial class dbEntities : DbContext
 
     public virtual DbSet<Logs> Logs { get; set; }
 
+    public virtual DbSet<Leaves> Leaves { get; set; }
+
+    public virtual DbSet<LeavesDetail> LeavesDetail { get; set; }
+
     public virtual DbSet<MapPositions> MapPositions { get; set; }
 
     public virtual DbSet<Messages> Messages { get; set; }

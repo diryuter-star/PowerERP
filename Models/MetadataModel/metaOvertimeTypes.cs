@@ -18,7 +18,6 @@ namespace powererp.Models
         [Required(ErrorMessage = "{0}必須輸入!!")]
         public string? TypeNo { get; set; }
         [Display(Name = "類別名稱")]
-        [Required(ErrorMessage = "{0}必須輸入!!")]
         public string? TypeName { get; set; }
         [Display(Name = "開始時間")]
         [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)]

@@ -1,0 +1,103 @@
+@model powererp.Models.vmUHRMP004_Leave
+@{
+    var value = TempData.Get<FormSecurity>("FormSecurity");
+    bool bln_visible = true;
+    if (!AppService.DebugMode && !value.IsAddEditDelete) bln_visible = false;
+    if (SessionService.IsReadonlyMode || SessionService.IsFormLocked || SessionService.IsConfirm || SessionService.IsCancel)
+        bln_visible = false;
+}
+
+<table class="table table-bordered mb-0">
+    <thead class="table-secondary">
+        <tr>
+            @if (bln_visible)
+            {
+                <th>
+                    @await Html.PartialAsync("_PartialFormCreate")
+                </th>
+            }
+            <th class="fixedcolumn">
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().EmpNo)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().EmpName)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().TypeName)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().Hours)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().SpecialDays)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().TotSpecialDays)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().SumSpecialDays)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().ReasonText)
+            </th>
+            <th>
+                @Html.DisplayNameSortFor(model => model.DetailModel.FirstOrDefault().Remark)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DetailModel)
+        {
+            SessionService.RowId = item.Id;
+            SessionService.RowData = $"{item.EmpNo} {item.EmpName}";
+            <tr>
+                @if (bln_visible)
+                {
+                    <td>
+                        @await Html.PartialAsync("_PartialFormEdit")
+                        @await Html.PartialAsync("_PartialFormDelete")
+                    </td>
+                }
+                <td class="fixedcolumn fixedcolumn-data">
+                    @Html.DisplayFor(modelItem => item.EmpNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SpecialDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotSpecialDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SumSpecialDays)
+                </td>
+                <td class="table-wrap">
+                    @Html.DisplayFor(modelItem => item.ReasonText)
+                </td>
+                <td class="table-wrap">
+                    @Html.DisplayFor(modelItem => item.Remark)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,11 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace powererp.Models
 {
     [ModelMetadataType(typeof(z_metaOvertimes))]
     public partial class Overtimes
     {
+        [NotMapped]
+        [Display(Name = "加班類別")]
+        public string? TypeName { get; set; }
+        [NotMapped]
+        [Display(Name = "員工姓名")]
+        public string? EmpName { get; set; }
     }
 }
 public class z_metaOvertimes
